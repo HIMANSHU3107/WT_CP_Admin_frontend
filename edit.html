@@ -21,6 +21,9 @@
             <label for="imageurl" class="h5 my-2">Image URL</label>
             <input type="text" class="form-control" placeholder="Image URL" id="imageurl">
 
+            <label for="cardurl" class="h5 my-2">Image URL</label>
+            <input type="text" class="form-control" placeholder="Card URL" id="cardurl">
+
             <label for="blogcontent" class="h5 mt-4">Content</label>
             <textarea id="blogcontent" cols="20" rows="10" class="form-control"
                 placeholder="Write blog content here"></textarea>
@@ -38,6 +41,7 @@
         let heading = document.getElementById("blogheading");
         let content = document.getElementById("blogcontent");
         let imageurl = document.getElementById("imageurl");
+        let cardurl = document.getElementById("cardurl");
         let urlParams = new URLSearchParams(window.location.search);
         let id = urlParams.get("id");
 
@@ -50,6 +54,7 @@
                 title: heading.value,
                 content: content.value,
                 imageurl: imageurl.value,
+                cardurl: cardurl.value,
             })
         })
             .then(res => res.json())
@@ -62,6 +67,7 @@
     let heading = document.getElementById("blogheading");
     let content = document.getElementById("blogcontent");
     let imageurl = document.getElementById("imageurl");
+    let cardurl = document.getElementById("cardurl");
     let urlParams = new URLSearchParams(window.location.search);
     let id = urlParams.get("id");
 
@@ -75,6 +81,7 @@
             heading.value = res["title"];
             content.value = res["content"];
             imageurl.value = res["imageurl"];
+            cardurl.value = res["cardurl"];
         })
         .catch(err => console.error(err));
 </script>

@@ -20,7 +20,9 @@
 
             <label for="imageurl" class="h5 my-2">Image URL</label>
             <input type="text" class="form-control" placeholder="Enter Image URL" id="imageurl">
-
+  
+            <label for="cardurl" class="h5 my-2">Card URL</label>
+            <input type="text" class="form-control" placeholder="Enter Card URL" id="cardurl">
             
             <label for="blogcontent" class="h5 mt-4">Content</label>
             <textarea id="blogcontent" cols="20" rows="10" class="form-control"
@@ -37,6 +39,7 @@
         let heading = document.getElementById("blogheading");
         let content = document.getElementById("blogcontent");
         let imageurl = document.getElementById("imageurl");
+        let cardurl = document.getElementById("cardurl");
 
         fetch('https://magazine-site-admin.herokuapp.com/create', {
             method: "POST",
@@ -47,6 +50,7 @@
                 title: heading.value,
                 content: content.value,
                 imageurl: imageurl.value,
+                cardurl: cardurl.value,
             })
         })
             .then(res => res.json())

@@ -19,6 +19,7 @@
         <div class='border border-dark border-3 rounded p-3 m-3' style="background-color: #ffffff;">
             <a href="/frontend/blog.html?id=" id="blogheading" class="text-danger text-decoration-none h3">Title</a>
             <div id="blogcontent" class="text-secondary text-truncate my-3">Content</div>
+            <a id="cardurl" class="text-secondary text-truncate my-3">Card URL</a>
             <img id="imageurl" height="200" widhth="200"></img>
             <a id="blogedit" href="/frontend/edit.html?id=" class="btn btn-light btn-sm">✏️</a>
             <button id="blogdelete" onclick="blogremove(this)" class="btn btn-light btn-sm"> &#128465;</button>
@@ -49,7 +50,11 @@
                      // image
                      let imageurl = clone.querySelector("#imageurl");
                     imageurl.src = element.imageurl;
-                    console.log(element.imageurl);
+                   
+
+                     // Card URL
+                     let cardurl = clone.querySelector("cardurl");
+                    cardurl.href = element.content;
 
                     // Delete button
                     let deleteButton = clone.querySelector("#blogdelete");
